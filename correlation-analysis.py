@@ -5,16 +5,18 @@ import argparse
 
 HEIGHTS_CSV = 'data/height.csv'
 GDPS_CSV = 'data/gdp.csv'
+MALES = 'Boys'
+FEMALES = 'Girls'
 
 
-def get_merged_dataset():
+def get_merged_dataset(sex=MALES):
     # READ DATAFRAMES
     heights = pd.read_csv(HEIGHTS_CSV, usecols=['Country', 'Sex', 'Year', 'Age group', 'Mean height'])
     gdps = pd.read_csv(GDPS_CSV, usecols=['Country Name', 'Country Code', '2019'])
 
     # PREPARE DATAFRAMES
     # filter heights: year 2019, male, age 19
-    heights = heights.loc[(heights['Year'] == 2019) & (heights['Sex'] == 'Boys') & (heights['Age group'] == 19)]
+    heights = heights.loc[(heights['Year'] == 2019) & (heights['Sex'] == sex) & (heights['Age group'] == 19)]
 
     heights = heights.drop(labels=['Year', 'Sex', 'Age group'], axis=1)  # drop unnecessary columns
 
@@ -29,9 +31,11 @@ def get_merged_dataset():
     return merged
 
 
-def plot_regression(dataframe, export=False):
+def plot_regression(dataframe, export=False, sex=MALES):
     # sort by GDP/capita so that plot can use logarithmic scale
     dataframe = dataframe.sort_values(['GDP per capita in USD'], 0)
+
+    sex_label = 'males' if sex == MALES else 'females'
 
     X = dataframe.iloc[:, 2].values.reshape(-1, 1)  # values converts it into a numpy array
     Y = dataframe.iloc[:, 3].values.reshape(-1, 1)  # -1 means that calculate the dimension of rows, but have 1 column
@@ -44,26 +48,29 @@ def plot_regression(dataframe, export=False):
     plt.plot(X, Y_pred, color='red')
     plt.xscale('log')
     plt.xlabel('GDP per capita [USD]')
-    plt.ylabel('average height of males aged 19 [cm]')
+    plt.ylabel('average height of {0} aged 19 [cm]'.format(sex_label))
 
     if export:
-        plt.savefig('out/regression.png')
+        plt.savefig('out/regression_{0}.png'.format(sex_label))
 
     plt.show()
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Analyze correlation between GDP per capita and '
-                                                 'average height of males aged 19 in 2019 for 164 countries.')
+                                                 'average height of 19-year-olds in 2019 in 164 countries.')
 
     parser.add_argument('--export', action='store_true', default=False,
-                        help='export CSV file with raw data and PNG file with regression plot')
+                        help='export CSV files with raw data and PNG files with regression plots')
 
     args = parser.parse_args()
 
-    dataset = get_merged_dataset()
+    dataset_males = get_merged_dataset(MALES)
+    dataset_females = get_merged_dataset(FEMALES)
 
     if args.export:
-        dataset.to_csv('out/countries.csv', index_label='ID', index=True)
+        dataset_males.to_csv('out/summary_males.csv', index_label='ID', index=True)
+        dataset_females.to_csv('out/summary_females.csv', index_label='ID', index=True)
 
-    plot_regression(dataset, args.export)
+    plot_regression(dataset_males, args.export, MALES)
+    plot_regression(dataset_females, args.export, FEMALES)
