@@ -31,7 +31,7 @@ def get_merged_dataset(sex=MALES):
     return merged
 
 
-def plot_regression(dataframe, export=False, sex=MALES):
+def plot_regression(dataframe, sex=MALES):
     # sort by GDP/capita so that plot can use logarithmic scale
     dataframe = dataframe.sort_values(['GDP per capita in USD'], 0)
 
@@ -50,27 +50,16 @@ def plot_regression(dataframe, export=False, sex=MALES):
     plt.xlabel('GDP per capita [USD]')
     plt.ylabel('average height of {0} aged 19 [cm]'.format(sex_label))
 
-    if export:
-        plt.savefig('out/regression_{0}.png'.format(sex_label))
-
+    plt.savefig('out/regression_{0}.png'.format(sex_label))
     plt.show()
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Analyze correlation between GDP per capita and '
-                                                 'average height of 19-year-olds in 2019 in 164 countries.')
-
-    parser.add_argument('--export', action='store_true', default=False,
-                        help='export CSV files with raw data and PNG files with regression plots')
-
-    args = parser.parse_args()
-
     dataset_males = get_merged_dataset(MALES)
     dataset_females = get_merged_dataset(FEMALES)
 
-    if args.export:
-        dataset_males.to_csv('out/summary_males.csv', index_label='ID', index=True)
-        dataset_females.to_csv('out/summary_females.csv', index_label='ID', index=True)
+    dataset_males.to_csv('out/summary_males.csv', index_label='ID', index=True)
+    dataset_females.to_csv('out/summary_females.csv', index_label='ID', index=True)
 
-    plot_regression(dataset_males, args.export, MALES)
-    plot_regression(dataset_females, args.export, FEMALES)
+    plot_regression(dataset_males, MALES)
+    plot_regression(dataset_females, FEMALES)
