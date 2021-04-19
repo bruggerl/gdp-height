@@ -24,7 +24,10 @@ under "Country-specific data for all countries".
 ## Persistent Identifiers
 | Content | DOI |
 |---------|-----|
+| source code | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4699933.svg)](https://doi.org/10.5281/zenodo.4699933) |
 | results | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4699901.svg)](https://doi.org/10.5281/zenodo.4699901) |
+| DMP | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4701118.svg)](https://doi.org/10.5281/zenodo.4701118) |
+|maDMP | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4701149.svg)](https://doi.org/10.5281/zenodo.4701149) |
 
 ## Folder Structure
 | Folder Name | Description                                                                                                                                                                                        |
