@@ -4,10 +4,20 @@ import constants as c
 
 
 class RegressionHandler:
+    """
+    This class encapsulates the logic for calculating and plotting a linear regression.
+    """
     @staticmethod
     def plot_regression(dataframe, sex=c.Sex.MALE):
+        """
+        Plot a linear regression with the GDP per capita being the X-variable and the mean height the Y-variable.
+
+        :param dataframe: dataframe containing the data to plot
+        :param sex: either MALE (0) or FEMALE (1) - specifies the sex for which the given dataframe contains data
+        :return: nothing
+        """
         # sort by GDP/capita so that plot can use logarithmic scale
-        dataframe = dataframe.sort_values(['GDP per capita in USD'], 0)
+        dataframe = dataframe.sort_values([c.GDP], 0)
 
         sex_label = 'males' if sex == c.Sex.MALE else 'females'
 

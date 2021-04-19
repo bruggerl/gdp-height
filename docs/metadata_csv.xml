@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<metadata
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:dcterms="http://purl.org/dc/terms/">
+    <dc:title>Analysis of Correlation Between GDP per Capita and Average Height of Young Adults in 2019 in 164
+        Countries
+    </dc:title>
+    <dc:creator>Lea Salome Brugger</dc:creator>
+    <dc:subject>Correlation Between GDP per Capita and Average Height of Young Adults</dc:subject>
+    <dc:description>Experiment which investigates the correlation between the GDP per capita and average height of
+        female and male 19-year-olds in 2019 in 164 countries.
+    </dc:description>
+    <dcterms:abstract>The aim of this experiment is to find out whether there is a (strong) correlation between the
+        gross domestic product (GDP) per capita of a country and the average height of its 19-year-old inhabitants. For
+        this purpose, data from two publicly available datasets were used: One dataset concerns the GDP per capita and
+        the other contains data about the mean height of girls and boys of different ages per country. Both datasets
+        consist of data collected over the course of several years; the year of interest for this experiment is 2019.
+        The data entries from the two datasets were matched by comparing the country name given in the respective entry.
+        Only countries are taken into consideration for which both datasets yield complete information - in total, 164
+        countries were considered in the experiment.
+    </dcterms:abstract>
+    <dc:date>19.04.2021</dc:date>
+    <dc:type xsi:type="dcterms:DCMIType">Dataset</dc:type>
+    <dc:format xsi:type="dcterms:IMT">text/csv</dc:format>
+    <dc:source>The World Bank: GDP per capita (current US$) (2021)</dc:source>
+    <dc:source>NCD Risk Factor Collaboration: Height - Evolution of adult height over time (2021)</dc:source>
+    <dc:language xsi:type="dcterms:ISO639-3">EN</dc:language>
+    <dcterms:temporal xsi:type="dcterms:Period">2019-2019</dcterms:temporal>
+    <dcterms:license xsi:type="dcterms:URI">https://creativecommons.org/licenses/by/4.0/</dcterms:license>
+
+</metadata>

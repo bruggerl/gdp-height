@@ -2,6 +2,9 @@ from enum import Enum
 
 
 class Sex(Enum):
+    """
+    This enumeration is used to differentiate between the two sexes.
+    """
     MALE = 0
     FEMALE = 1
 
