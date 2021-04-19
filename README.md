@@ -69,5 +69,8 @@ python -m pdoc --html --output-dir ../docs .
 This command will generate HTML files in the `docs/src` directory which can be viewed in any Web browser.
 In the browser, it is possible to navigate the documentation.
 
+## Contributing
+Pull requests are welcome. For major changes, please contact the author before starting with the implementation.
+
 ## License
 MIT
