@@ -21,6 +21,11 @@ NCD Risk Factor Collaboration, Height - Evolution of adult height over time, NCD
 Accessed on: Apr. 18, 2021. [Online] Available: [https://ncdrisc.org/data-downloads-height.html](https://ncdrisc.org/data-downloads-height.html)
 under "Country-specific data for all countries".
 
+## Persistent Identifiers
+| Content | DOI |
+|---------|-----|
+| results | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4699901.svg)](https://doi.org/10.5281/zenodo.4699901) |
+
 ## Folder Structure
 | Folder Name | Description                                                                                                                                                                                        |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
