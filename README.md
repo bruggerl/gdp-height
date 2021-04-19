@@ -59,7 +59,9 @@ Additionally, three output files are created in the `out` folder:
 
 
 ## Generating the Documentation
-You can generate the documentation by executing the following command from the `src` folder:
+Make sure that the required dependencies are installed (this can be done as described above).
+
+Then, you can generate the documentation by executing the following command from the `src` folder:
 ```
 python -m pdoc --html --output-dir ../docs .
 ```
