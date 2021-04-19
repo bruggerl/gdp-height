@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/"
+           xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:creator>Lea Salome Brugger</dc:creator>
+    <dc:date>2021-04-19</dc:date>
+    <dc:description>These are the results obtained by conducting the experiment "Average Height of 19-year-old Males and
+        Females and GDP per Capita in 2019 for 164 Countries".
+
+        The CSV file contains the raw data produced by processing, filtering and merging the input datasets. There are
+        two rows for each of the 164 countries. In both rows, the country name, country code and GDP per capita are
+        given. However, one row contains the average height of 19-year-old males (indicated by the value 'Boys' in the
+        'Sex' column) whereas the other displays the average height of 19-year-old females (indicated by the value
+        'Girls').
+
+        Furthermore, there are two PNG files which display the regression plots for the average height of 19-year-old
+        males and females, respectively. Note that the x-scale (for the GDP per capita) is logarithmic.
+    </dc:description>
+    <dc:identifier>https://zenodo.org/record/4699901</dc:identifier>
+    <dc:identifier>10.5281/zenodo.4699901</dc:identifier>
+    <dc:language>eng</dc:language>
+    <dc:rights>info:eu-repo/semantics/openAccess</dc:rights>
+    <dc:rights>https://creativecommons.org/licenses/by/4.0/legalcode</dc:rights>
+    <dc:subject>GDP</dc:subject>
+    <dc:subject>GDP per capita</dc:subject>
+    <dc:subject>height</dc:subject>
+    <dc:subject>average height</dc:subject>
+    <dc:subject>regression</dc:subject>
+    <dc:subject>linear regression</dc:subject>
+    <dc:subject>2019</dc:subject>
+    <dc:title>Analysis of Correlation Between GDP per Capita and Average Height of Young Adults in 2019 in 164
+        Countries
+    </dc:title>
+    <dc:type>info:eu-repo/semantics/other</dc:type>
+    <dc:type>dataset</dc:type>
+    <dc:source>The World Bank: GDP per capita (current US$) (2021)</dc:source>
+    <dc:source>NCD Risk Factor Collaboration: Height - Evolution of adult height over time (2021)</dc:source>
+    <dc:coverage>2019-2019</dc:coverage>
+</oai_dc:dc>
